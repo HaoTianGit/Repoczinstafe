@@ -7,8 +7,8 @@
 // GraphQL fragment: studentFields
 // ====================================================
 
-export interface studentFields {
-  __typename: "Student";
+export interface AccountFields {
+  __typename: "Account";
   id: string;
   name: string;
   gitHub: string;

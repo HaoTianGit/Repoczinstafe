@@ -3,13 +3,13 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Year } from "./../../../__generated__/globalTypes";
+import { Year } from "../../../__generated__/globalTypes";
 
 // ====================================================
-// GraphQL mutation operation: AddProject
+// GraphQL query operation: Project
 // ====================================================
 
-export interface AddProject_addProject {
+export interface Project_project {
   __typename: "Project";
   id: string;
   name: string;
@@ -20,13 +20,10 @@ export interface AddProject_addProject {
   created: any;
 }
 
-export interface AddProject {
-  addProject: AddProject_addProject;
+export interface Project {
+  project: Project_project;
 }
 
-export interface AddProjectVariables {
-  name: string;
-  description: string;
-  link: string;
-  year: string;
+export interface ProjectVariables {
+  id: string;
 }

@@ -7,7 +7,7 @@
 // GraphQL query operation: Student
 // ====================================================
 
-export interface Student_student {
+export interface Account_account {
   __typename: "Student";
   id: string;
   name: string;
@@ -15,10 +15,10 @@ export interface Student_student {
   imageURI: string;
 }
 
-export interface Student {
-  student: Student_student;
+export interface Account {
+  student: Account_account;
 }
 
-export interface StudentVariables {
+export interface AccountVariables {
   id: string;
 }

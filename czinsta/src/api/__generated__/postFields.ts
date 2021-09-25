@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Year } from "./../../../__generated__/globalTypes";
+import { Year } from "../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: projectFields

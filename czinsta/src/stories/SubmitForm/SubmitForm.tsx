@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { TextField, Typography, Grid, Container } from '@material-ui/core';
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Button } from '../Button/Button';
-import { ADD_PROJECT} from '../../api/mutations';
-import { AddProject } from '../../api/__generated__/AddProject';
+import { ADD_POST} from '../../api/mutations';
+import { AddPost } from '../../api/__generated__/AddPost';
 import { useMutation } from '@apollo/client';
 
 import './submit-form.css';
@@ -29,14 +29,14 @@ export const SubmitForm: React.FC<SubmitFormProps> = () => {
 
  
 
-    const [addProject] = useMutation<AddProject>(ADD_PROJECT)
+    const [addPost] = useMutation<AddPost>(ADD_POST)
 
     const handleSubmit = async() => {
         if (imageUrl !== "") {
             console.log({"githubUrl": imageUrl, "Description": description });
 
             try {
-                await addProject({variables: {
+                await addPost({variables: {
                     description: description,
                     link: imageUrl,
                 }})

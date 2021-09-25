@@ -3,7 +3,7 @@ import { Button, Card, CardActionArea, CardContent, CardMedia, CircularProgress,
 import React, { useEffect } from "react";
 import { CardList } from ".";
 import { PROJECTS } from "../api/queries";
-import { Projects, Projects_projects_nodes } from "../api/__generated__/Projects";
+import { Projects, Projects_projects_nodes } from "../api/__generated__/Posts";
 import MediaCard from "./Cards/MediaCard";
 
 
