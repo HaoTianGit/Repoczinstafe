@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-export const STUDENT = gql`
-    fragment studentFields on Student {
+export const ACCOUNT = gql`
+    fragment accountFields on Account {
         id
         name
         gitHub
@@ -9,8 +9,8 @@ export const STUDENT = gql`
     }
 `;
 
-export const PROJECT = gql`
-    fragment projectFields on Project {
+export const POST = gql`
+    fragment postFields on Post {
         id
         name
         description

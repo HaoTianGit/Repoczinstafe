@@ -6,10 +6,10 @@
 import { Year } from "../../../__generated__/globalTypes";
 
 // ====================================================
-// GraphQL query operation: Projects
+// GraphQL query operation: Posts
 // ====================================================
 
-export interface Projects_projects_pageInfo {
+export interface Posts_posts_pageInfo {
   __typename: "PageInfo";
   /**
    * Indicates whether more edges exist following the set defined by the clients arguments.
@@ -29,7 +29,7 @@ export interface Projects_projects_pageInfo {
   endCursor: string | null;
 }
 
-export interface Projects_projects_edges {
+export interface Posts_posts_edges {
   __typename: "ProjectEdge";
   /**
    * A cursor for use in pagination.
@@ -37,16 +37,16 @@ export interface Projects_projects_edges {
   cursor: string;
 }
 
-export interface Projects_projects_nodes_student {
-  __typename: "Student";
+export interface Posts_posts_nodes_student {
+  __typename: "Account";
   id: string;
   name: string;
   gitHub: string;
   imageURI: string;
 }
 
-export interface Projects_projects_nodes {
-  __typename: "Project";
+export interface Posts_posts_nodes {
+  __typename: "Post";
   id: string;
   name: string;
   description: string;
@@ -54,27 +54,27 @@ export interface Projects_projects_nodes {
   year: Year;
   modified: any;
   created: any;
-  student: Projects_projects_nodes_student;
+  student: Posts_posts_nodes_student;
 }
 
-export interface Projects_projects {
-  __typename: "ProjectConnection";
+export interface Posts_posts {
+  __typename: "PostConnection";
   /**
    * Information to aid in pagination.
    */
-  pageInfo: Projects_projects_pageInfo;
+  pageInfo: Posts_posts_pageInfo;
   /**
    * A list of edges.
    */
-  edges: Projects_projects_edges[] | null;
+  edges: Posts_posts_edges[] | null;
   /**
    * A flattened list of the nodes.
    */
-  nodes: Projects_projects_nodes[] | null;
+  nodes: Posts_posts_nodes[] | null;
 }
 
 export interface Projects {
-  projects: Projects_projects | null;
+  projects: Posts_posts | null;
 }
 
 export interface ProjectsVariables {

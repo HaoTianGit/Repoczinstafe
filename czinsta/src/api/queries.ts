@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 import * as fragments from "./fragments";
 
-export const PROJECTS = gql`
-    query Projects($first: Int, $after: String, $last: Int, $before: String) {
-        projects(first: $first, after: $after, last: $last, before: $before) {
+export const POSTS = gql`
+    query Posts($first: Int, $after: String, $last: Int, $before: String) {
+        posts(first: $first, after: $after, last: $last, before: $before) {
             pageInfo{
                 ...pageInfoFields
             }
@@ -11,30 +11,30 @@ export const PROJECTS = gql`
                 cursor
             } 
             nodes { 
-                ...projectFields
-                student{
-                    ...studentFields
+                ...postFields
+                account{
+                    ...accountFields
                 }
             }
         }
     }
-    ${fragments.PROJECT}
+    ${fragments.POST}
     ${fragments.PAGE_INFO}
-    ${fragments.STUDENT}
+    ${fragments.ACCOUNT}
 `
 
-export const PROJECT  = gql`
-    query Project($id: ID!) {
-        project(id: $id) {
-            ...projectFields
+export const POST  = gql`
+    query Post($id: ID!) {
+        post(id: $id) {
+            ...postFields
         }
     }
     ${fragments.PROJECT}
 `
 
-export const STUDENTS = gql`
-    query Students($first: Int, $after: String, $last: Int, $before: String) {
-        students(first: $first, after: $after, last: $last, before: $before) {
+export const ACCOUNTS = gql`
+    query accounts($first: Int, $after: String, $last: Int, $before: String) {
+        accounts(first: $first, after: $after, last: $last, before: $before) {
             pageInfo{
             ...pageInfoFields
             }
@@ -42,28 +42,28 @@ export const STUDENTS = gql`
                 cursor
             } 
             nodes { 
-                ...studentFields
+                ...accountFields
             }
         }
     }
-    ${fragments.STUDENT}
+    ${fragments.ACCOUNT}
     ${fragments.PAGE_INFO}
 `
 
-export const STUDENT = gql`
-    query Student($id: ID!) {
-        student(id: $id){
-            ...studentFields
+export const ACCOUNT = gql`
+    query Account($id: ID!) {
+        account(id: $id){
+            ...accountFields
         }
     }
-    ${fragments.STUDENT}
+    ${fragments.ACCOUNT}
 `
 
 export const SELF = gql`
     query Self {
         self {
-            ...studentFields
+            ...AccountFields
         }
     }
-    ${fragments.STUDENT}
+    ${fragments.ACCOUNT}
 `

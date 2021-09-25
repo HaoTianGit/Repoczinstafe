@@ -3,8 +3,8 @@ import React from 'react';
 import { CardList,  SectionHeader } from './stories';
 import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { PROJECTS } from './api/queries';
-import { Projects,Projects_projects_nodes } from './api/__generated__/Projects';
+import { POSTS} from './api/queries';
+import { Posts,Posts_posts_nodes } from './api/__generated__/Posts';
 import MediaCard from './stories/Cards/MediaCard'
 
 
@@ -25,13 +25,13 @@ export interface FeedPageProps {
 const FeedPage = ({ pageTitle }: FeedPageProps): JSX.Element => {
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
   
-  const {loading, error, data} = useQuery<Projects>(PROJECTS)
+  const {loading, error, data} = useQuery<Posts>(POSTS)
   const styles = FeedPageStyles();
 
     useEffect(() => {
         if(!loading && !error) {
-            setCards(data!.projects!.nodes!.map((project : Projects_projects_nodes) => {
-                return <MediaCard ImageUrl = {project.link} Description = {project.description}/>
+            setCards(data!.posts!.nodes!.map((post : Posts_posts_nodes) => {
+                return <MediaCard ImageUrl = {post.link} Description = {post.description}/>
             }))
         }
     }, [data]);
